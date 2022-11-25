@@ -11,7 +11,6 @@ PhoneBook::PhoneBook()
 PhoneBook::~PhoneBook()
 {
    	std::cout << "\nExit" << std::endl;
-
 }
 
 Contact PhoneBook::GetContact(int index)

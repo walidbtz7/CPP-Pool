@@ -2,14 +2,14 @@ NAME    		=    phoneBook
 
 SRCS    		= 	main.cpp Contact.cpp PhoneBook.cpp
 
-CPPFLAGS 			=	-Wall -Wextra -Werror 
+CPPFLAGS 			=	-Wall -Wextra -Werror -std=c++98
 
 OBJS			=    $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME):  $(OBJS)
-	c++ $(FLAGS) $(SRCS) -o $(NAME)
+	c++ $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@rm -f ${OBJS}

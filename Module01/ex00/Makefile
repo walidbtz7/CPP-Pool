@@ -1,6 +1,6 @@
-NAME    		=    megaphone
+NAME    		=    Zombie
 
-SRCS    		= 	megaphone.cpp
+SRCS    		= 	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 CPPFLAGS 		=	-Wall -Wextra -Werror -std=c++98
 
@@ -9,7 +9,7 @@ OBJS			=    $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME):  $(OBJS)
-	c++ $(FLAGS) $(SRCS) -o $(NAME)
+	c++ $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@rm -f ${OBJS}

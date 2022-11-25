@@ -3,21 +3,21 @@
 std::string Contact::GetFistName(int max)
 {
     if(_firstName.length() > 10 && max != 0)
-        return _firstName.substr(0 , 8) + '.';
+        return _firstName.substr(0 , 9) + '.';
     return _firstName;
 }
 
 std::string Contact::GetLastName(int max)
 {
   if(_lastName.length() > 10 && max != 0)
-        return _lastName.substr(0 , 8) + '.';
+        return _lastName.substr(0 , 9) + '.';
     return _lastName;
 }
 
 std::string Contact::GetNickName(int max)
 {
   if(_nickName.length() > 10 && max != 0)
-        return _nickName.substr(0 , 8) + '.';
+        return _nickName.substr(0 , 9) + '.';
     return _nickName;
 }
 
