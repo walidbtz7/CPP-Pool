@@ -1,4 +1,4 @@
-NAME    		=    phoneBook
+NAME    		=    Human
 
 SRCS    		= 	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
