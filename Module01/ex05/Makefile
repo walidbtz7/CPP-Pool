@@ -1,6 +1,6 @@
-NAME    		=    replace
+NAME    		=   Harl
 
-SRCS    		= 	main.cpp replace.cpp
+SRCS    		= 	main.cpp Harl.cpp
 
 CPPFLAGS 		=	-Wall -Wextra -Werror -std=c++98
 
@@ -10,10 +10,10 @@ all: $(NAME)
 
 $(NAME):  $(OBJS)
 	c++ $(CPPFLAGS) $(SRCS) -o $(NAME)
-
+	rm ${OBJS}
 clean:
 	@rm -f ${OBJS}
-	@rm -f *.replace
+
 fclean:    clean
 	@rm -f ${NAME}
 
