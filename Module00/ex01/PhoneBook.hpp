@@ -9,7 +9,7 @@ class PhoneBook
     public:
         PhoneBook();
         ~PhoneBook();
-        void SetContact(int index);
+        void    SetContact(int *index, int *length);
         Contact GetContact(int index);
         void    Search(int length);
         void    showContact(int index, int length);

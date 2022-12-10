@@ -1,6 +1,6 @@
-NAME    		=   harl
+NAME    		=    Zombie
 
-SRCS    		= 	main.cpp Harl.cpp
+SRCS    		= 	main.cpp fixed.cpp
 
 CPPFLAGS 		=	-Wall -Wextra -Werror -std=c++98
 

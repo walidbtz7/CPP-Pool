@@ -18,32 +18,56 @@ Contact PhoneBook::GetContact(int index)
     return _Contacts[index];
 }
 
-void    PhoneBook::SetContact(int index)
+std::string getInput(int  *status, std::string input)
 {
-    Contact Contact;
-    std::string firstName;
-    std::string lastName;
-    std::string nickName;
-    std::string phoneNumber;
-    std::string secret;
+    if(*status)
+    {
+        std::cout << "\t" << input;
+        getline(std::cin, input);
+        if(std::cin.eof())
+            exit(1);
+        else if (input.empty())
+        {
+            std::cerr << "\tError! contact can’t have empty fields." << std::endl;
+            *status = 0;
+            input.clear();
+        }
+    }
+    else
+        input.clear();
+    return (input);
+}
 
-    std::cout << "\t Enter First name: ";
-    getline(std::cin, firstName);
+void    PhoneBook::SetContact(int *index, int *length)
+{
+    int         status = 1;
+    Contact     Contact;
+    std::string firstName = "Enter First name: ";
+    std::string lastName =  "Enter Last name: ";
+    std::string nickName = "Enter Nick name: ";
+    std::string phoneNumber = "Enter Phone Number: ";
+    std::string secret = "Enter Secret: ";
+
+    firstName = getInput(&status, firstName);
     Contact.SetFistName(firstName);
-    std::cout << "\t Enter Last name: ";
-    getline(std::cin, lastName);
+    lastName = getInput(&status, lastName);
     Contact.SetLastName(lastName);
-    std::cout << "\t Enter Nick name: ";
-    getline(std::cin, nickName);
+    nickName = getInput(&status, nickName);
     Contact.SetNickName(nickName);
-    std::cout << "\t Enter Phone Number: ";
-    getline(std::cin, phoneNumber);
+    phoneNumber = getInput(&status, phoneNumber);
     Contact.SetPhoneNumber(phoneNumber);
-    std::cout << "\t Enter Secret: ";
-    getline(std::cin, secret);
+    secret = getInput(&status, secret);
     Contact.SetSecret(secret);
-    std::cout << "  -Contact Saved successfully" << std::endl;
-    this->_Contacts[index] = Contact;
+    if(status)
+    {
+        this->_Contacts[*index] = Contact;
+        std::cout << "  -Contact Saved successfully" << std::endl;
+   		*index += ((*index < 7) * 1) + ((*index >= 7) * (-7));
+        if(*length >= 7)
+            *length = 7;
+        else
+            (*length)++;
+    }
 }
 
 void     PhoneBook::showContact(int index, int length)

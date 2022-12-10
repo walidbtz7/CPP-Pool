@@ -5,7 +5,9 @@ int main()
 	PhoneBook PhoneBook;
 	std::string	commande;
 	int index;
+	int	length;
 
+	length = 0;
 	index = 0;
 	while(commande != "EXIT")
 	{
@@ -16,12 +18,11 @@ int main()
 		if (commande == "ADD")
 		{
 			std::cout << "  - New Contact:" << std::endl;
-			PhoneBook.SetContact(index);
-			index += ((index < 7) * 1) + ((index >= 7) * (-7));
+			PhoneBook.SetContact(&index, &length);
 		}
 		else if (commande == "SEARCH")
 		{
-			PhoneBook.Search(index);
+			PhoneBook.Search(length);
 		}
 		else if(commande != "EXIT")
 			std::cout << "  - The program only accepts ADD, SEARCH and EXIT" << std::endl;

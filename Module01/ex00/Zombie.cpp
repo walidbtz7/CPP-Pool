@@ -2,7 +2,7 @@
 
 Zombie::Zombie()
 {
-        std::cout << "New Zombie Created" << std::endl;
+    std::cout << "New Zombie Created" << std::endl;
 }
 
 Zombie::~Zombie()

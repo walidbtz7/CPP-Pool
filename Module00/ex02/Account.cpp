@@ -49,7 +49,7 @@ void Account::_displayTimestamp(void)
 void	Account::displayAccountsInfos( void ) 
 {
     _displayTimestamp();
-    std::cout << "accounts:" << getNbDeposits() << ";total:" << getTotalAmount() << ";deposits" << getNbDeposits()  << ";withdrawals:" << getNbWithdrawals() << std::endl;
+    std::cout << "accounts:" << getNbAccounts() << ";total:" << getTotalAmount() << ";deposits" << getNbDeposits()  << ";withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
 void    Account::makeDeposit( int deposit ) 

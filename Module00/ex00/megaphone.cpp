@@ -4,13 +4,11 @@
 
 int main(int argc, char **argv)
 {
-    int i;
     int j;
 
-    i = 1;
     if(argc > 1)
     {
-        while(i < argc)
+        for(int i = 1; i < argc; i++)
         {
             j = 0;
             while (argv[i][j])
@@ -19,7 +17,6 @@ int main(int argc, char **argv)
                 j++;
             }
             std::cout << argv[i];
-            i++;
         }
         std::cout << std::endl;
     }

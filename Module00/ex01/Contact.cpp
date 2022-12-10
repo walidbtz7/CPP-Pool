@@ -33,27 +33,32 @@ std::string Contact::GetSecret()
 
 void Contact::SetFistName(std::string firstName)
 {
-    this->_firstName = firstName;
+    if (!(firstName.empty()))
+        this->_firstName = firstName;
 }
 
 void Contact::SetLastName(std::string lastName)
 {
+    if (!(lastName.empty()))
     this->_lastName = lastName;
 }
 
 void Contact::SetNickName(std::string nickName)
 {
-    this->_nickName = nickName;
+    if (!(nickName.empty()))
+        this->_nickName = nickName;
 }
 
 void Contact::SetPhoneNumber(std::string phoneNumber)
 {
-    this->_phoneNumber = phoneNumber;
+    if (!(phoneNumber.empty()))
+        this->_phoneNumber = phoneNumber;
 }
 
 void Contact::SetSecret(std::string secret)
 {
-    this->_secret = secret;
+    if (!(secret.empty()))
+        this->_secret = secret;
 }
 
 void Contact::show()
