@@ -1,6 +1,6 @@
-NAME    		=    Zombie
+NAME    		=    ClapTrap
 
-SRCS    		= 	main.cpp Zombie.cpp zombieHord.cpp
+SRCS    		= 	ClapTrap.cpp main.cpp
 
 CPPFLAGS 		=	-Wall -Wextra -Werror -std=c++98
 

@@ -38,25 +38,18 @@ void Harl::complain( std::string level )
     i = 0;
     while(level.compare(levels[i]))
        i++;
-    while(i < 5)
-    {
-        switch (i) {
-            case 0:
-                (this->*fun[i])();
-                break;
-            case 1:
-                (this->*fun[i])();
-                break;
-            case 2:
-                (this->*fun[i])();
-                break;
-            case 3:
-                (this->*fun[i++])();
-                break;
-            default :
-                std::cerr << "Probably complaining about insignificant problems" << std::endl;
-                break;
-        }
-        i++;
+    switch (i) {
+        case 0:
+            (this->*fun[i++])();
+        case 1:
+            (this->*fun[i++])();
+        case 2:
+            (this->*fun[i++])();
+        case 3:
+            (this->*fun[i++])();
+            break;
+        default :
+            std::cerr << "Probably complaining about insignificant problems" << std::endl;
+            break;
     }
 }

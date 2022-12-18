@@ -72,7 +72,7 @@ void    PhoneBook::SetContact(int *index, int *length)
 
 void     PhoneBook::showContact(int index, int length)
 {
-    if(index < 0 || index >=  length)
+    if (index < 0 || index >=  length)
         std::cout << "\tIndex Not Found :(" << std::endl;
     else
     {
@@ -107,7 +107,7 @@ void    PhoneBook::Search(int length)
     }
 	std::cout << "\n\t- Select A Contact By Index >> ";
     std::cin >> index;
-    std::cin.ignore();
-    std::cin.clear();
     showContact((index - 1), length);
+    std::cin.clear();
+    std::cin.ignore();
 }

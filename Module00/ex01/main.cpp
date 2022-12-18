@@ -21,9 +21,7 @@ int main()
 			PhoneBook.SetContact(&index, &length);
 		}
 		else if (commande == "SEARCH")
-		{
 			PhoneBook.Search(length);
-		}
 		else if(commande != "EXIT")
 			std::cout << "  - The program only accepts ADD, SEARCH and EXIT" << std::endl;
 	}
