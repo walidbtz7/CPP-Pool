@@ -41,7 +41,6 @@ void    ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    _damage += amount;
     if(_hit - amount < 0)
         _hit    -= amount;
     else

@@ -79,17 +79,17 @@ Fixed Fixed::operator*(const Fixed& other) const
 {
     Fixed f;
 
-    f._RawBits = this->_RawBits * (other.toInt());
+    f._RawBits = (this->_RawBits * other._RawBits) >> _bits;
 
     return (f);
 }
 
 Fixed Fixed::operator/(const Fixed& other) const
 {
-    int var;
+    // int var;
 
-    var = this->_RawBits / other._RawBits;
-    return (Fixed(var));
+    // var = this->_RawBits / other._RawBits;
+    return (Fixed( this->_RawBits / other._RawBits));
 }
 
 bool Fixed::operator>(const Fixed& other) const
