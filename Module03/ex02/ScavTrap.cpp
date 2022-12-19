@@ -31,13 +31,14 @@ void    ScavTrap::guardGate() {
     std::cout << "ScavTrap  " << _name <<" is now in Gate keeper mode." << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
-    if (this != &other) {
-        _name = other._name;
-        _hit = other._hit;
-        _energy = other._energy;
-        _damage = other._damage;
+
+void    ScavTrap::attack(const std::string& target)
+{
+    if(_energy)
+    {
+        std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
+        _energy--;
     }
-    std::cout << "ScavTrap assignation operator called" << std::endl;
-    return *this;
+    else
+        std::cout << "No Energy Points left" << std::endl;
 }
