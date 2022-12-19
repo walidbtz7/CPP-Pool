@@ -57,7 +57,6 @@ float Fixed::toFloat( void ) const
     return (float) _RawBits / (1 << _bits );
 }
 
-
 int Fixed::toInt( void ) const
 {
     return (_RawBits >> _bits);
