@@ -9,8 +9,8 @@ Fixed::Fixed(): _RawBits(0)
 
 Fixed::Fixed(const Fixed& other)
 {
-    _RawBits = other._RawBits;
     std::cout << "Copy constructor called" << std::endl;
+    *this = other;
 }
 
 Fixed::Fixed(const float fixed)
