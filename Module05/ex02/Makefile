@@ -1,7 +1,7 @@
 NAME    		=    Form
 
-SRCS    		= 		Bureaucrat.cpp Form.cpp\
-						main.cpp
+SRCS    		= 		Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
+
 
 CPPFLAGS 		=	-Wall -Wextra -Werror -std=c++98
 

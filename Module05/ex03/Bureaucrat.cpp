@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("mbabi"), _grade(150) {
-    std::cout << "Bureaucrat default constructor called" << std::endl;
+    // std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
@@ -9,22 +9,21 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
         throw (GradeTooHighException());
     else if(_grade > 150)
         throw (GradeTooLowException());
-    std::cout << "Bureaucrat constructor called" << std::endl;
+    // std::cout << "Bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src){
     *this = src;
-    std::cout << "Bureaucrat copy constructor called" << std::endl;
+    // std::cout << "Bureaucrat copy constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat() {
-    std::cout << "Bureaucrat destructor called" << std::endl;
+    // std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
-    std::cout << "Bureaucrat assignation operator called" << std::endl;
-    this->_grade = rhs._grade;
-
+    // std::cout << "Bureaucrat assignation operator called" << std::endl;
+        this->_grade = rhs._grade;
     return *this;
 }
 
@@ -74,5 +73,17 @@ void Bureaucrat::signForm(Form & form)
     catch(const std::exception& e)
     {
         std::cerr << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+    try
+    {
+        form.execute(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << _name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
     }
 }

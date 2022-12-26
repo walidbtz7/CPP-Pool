@@ -1,7 +1,6 @@
-NAME    		=    Form
+NAME    		=    array
 
-SRCS    		= 		Bureaucrat.cpp Form.cpp\
-						main.cpp
+SRCS    		= 	main.cpp
 
 CPPFLAGS 		=	-Wall -Wextra -Werror -std=c++98
 
